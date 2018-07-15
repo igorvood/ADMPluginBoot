@@ -1,12 +1,12 @@
-package ru.vood.admplugin.admPlugin.spring.impl;
+package ru.vood.admplugin.infrastructure.spring.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.vood.admplugin.admPlugin.spring.entity.VBdIndexEntityTest;
-import ru.vood.admplugin.admPlugin.spring.intf.VBdIndexEntityServiceTest1;
-import ru.vood.admplugin.admPlugin.spring.repository.VBdIndexEntityRepositoryTest1;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntityTest;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexEntityServiceTest1;
+import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexEntityRepositoryTest1;
 
 import java.math.BigDecimal;
 

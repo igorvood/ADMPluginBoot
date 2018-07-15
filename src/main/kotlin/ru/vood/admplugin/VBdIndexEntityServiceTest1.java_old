@@ -1,6 +1,6 @@
-package ru.vood.admplugin.admPlugin.spring.intf;
+package ru.vood.admplugin.infrastructure.spring.intf;
 
-import ru.vood.admplugin.admPlugin.spring.entity.VBdIndexEntityTest;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntityTest;
 
 import java.math.BigDecimal;
 

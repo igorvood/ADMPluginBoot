@@ -1,7 +1,7 @@
-package ru.vood.admplugin.admPlugin.spring.repository;
+package ru.vood.admplugin.infrastructure.spring.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.vood.admplugin.admPlugin.spring.entity.VBdIndexEntityTest;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntityTest;
 
 import java.math.BigDecimal;
 
