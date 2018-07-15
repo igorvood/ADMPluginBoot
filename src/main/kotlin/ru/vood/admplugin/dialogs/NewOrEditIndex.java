@@ -8,7 +8,7 @@ import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexEntityService;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexedColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexedColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdObjectEntityService;
 import ru.vood.admplugin.infrastructure.spring.referenceBook.ObjectTypes;
 
@@ -153,7 +153,7 @@ public class NewOrEditIndex extends JAddDialog {
         VBdObjectEntityService service = LoadedCTX.getService(VBdObjectEntityService.class);
         List<VBdObjectEntity> vBdObjectEntityList = service.findByParentAndTypeObject(parentObject, ObjectTypes.getCOLOMN());
         if (indexEntity != null) {
-            VBdIndexedColomnsEntityService indexedColomnsEntityService = LoadedCTX.getService(VBdIndexedColomnsEntityService.class);
+            VBdIndexedColumnsEntityService indexedColomnsEntityService = LoadedCTX.getService(VBdIndexedColumnsEntityService.class);
             indexedColomnsEntities = indexedColomnsEntityService.findByCollectionId(indexEntity.getColumns())
                     .stream().map(q -> q.getColomnRef())
                     .collect(Collectors.toList());

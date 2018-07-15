@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexedColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexedColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexedColomnsEntityRepository;
 
 import javax.persistence.EntityManager;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service//("jpaVBdIndexedColomnsService")
 @Repository
 @Transactional
-public class VBdIndexedColomnsImpl implements VBdIndexedColomnsEntityService {
+public class VBdIndexedColumnsImpl implements VBdIndexedColumnsEntityService {
 
     @Autowired
     protected EntityManager em;
