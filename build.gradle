@@ -53,7 +53,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     compile("org.jetbrains.kotlin:kotlin-reflect")
 
-//    compile group: 'p6spy', name: 'p6spy', version: '2.3.1'
+    compile group: 'p6spy', name: 'p6spy', version: '2.3.1'
     compile group: 'com.oracle', name: 'ojdbc6', version: '11.2.0.3'
 
 //    <!-- Joda-Time - API uses in Spring Data-->
