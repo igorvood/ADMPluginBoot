@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class HelpFunction {
+public class CommonFunctionUploads {
 
     /**
      * распределение разных записей по своим спискам

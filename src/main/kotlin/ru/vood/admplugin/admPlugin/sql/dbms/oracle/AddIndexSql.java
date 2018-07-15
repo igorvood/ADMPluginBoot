@@ -75,7 +75,7 @@ public class AddIndexSql {
         res.append(tableName);
         res.append(col);
         res.append(" ) ");
-        //res.append(AppConst.getTune(ListTunes.TABLE_SPASE_SYS_TABLE));
+
         res.append(" tablespace ");
         res.append(tableSpace);
         res.append(" ");

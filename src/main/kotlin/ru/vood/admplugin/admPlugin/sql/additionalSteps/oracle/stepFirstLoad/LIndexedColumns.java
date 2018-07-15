@@ -23,7 +23,6 @@ public class LIndexedColumns {
     private AddPrimaryKeySql primaryKeySql;
 
     @Autowired
-    //private AddIndexSql addIndexSql;
     private AddIndexImpl addIndex;
 
     @Autowired

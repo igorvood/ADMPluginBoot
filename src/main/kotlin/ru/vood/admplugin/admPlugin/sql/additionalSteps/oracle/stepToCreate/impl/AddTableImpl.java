@@ -27,10 +27,6 @@ public class AddTableImpl implements StepsCreateAndDropServise {
     @Autowired
     private PluginTunes tunes;
 
-//    @Autowired
-//    @Qualifier("jpaVBdColomnsEntityService")
-//    private VBdColomnsEntityService colomnsEntityService;
-
     @Override
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {
         if (!(bdObject instanceof VBdTableEntity)) {

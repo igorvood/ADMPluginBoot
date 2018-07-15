@@ -14,7 +14,7 @@ import java.util.zip.ZipOutputStream;
 public class ZipUtil {
 
     @Autowired
-    private HelpFunction helpFunction;
+    private CommonFunctionUploads helpFunction;
 
     public void doZip(File dir, File zip) throws IOException {
         helpFunction.getListFileInDir(dir);

@@ -12,8 +12,8 @@ class GenImportImplKT : GenImportServiceKT, ApplicationListener<AddImportEvent> 
 
 
     override fun genCode(): StringBuilder {
-        if (listImports.size > 0) {
-            var par = StringBuilder(listImports?.asSequence()
+        if (listImports?.size > 0) {
+            var par = StringBuilder(listImports.asSequence()
                     .sorted()
                     .map { q -> getOneImport(q) }
                     .reduce { s1, s2 -> s1 + s2 })

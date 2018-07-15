@@ -31,14 +31,14 @@ class GenClassServiceKT : GenAnyPartKT<VBdTableEntity> {
 
         code.append(genPackageImpl!!.genCode(entity, typeOfGenClass))
 
-        val annotationClass = genAnnotationClassService!!.genCode(entity, typeOfGenClass)
+        val annotationClass = genAnnotationClassService.genCode(entity, typeOfGenClass)
 
         val clazz = "/*Наименование класса - ${entity.name}*/\n" +
-                "open class " + commonFunction!!.getClassName(entity, typeOfGenClass) + commonFunction!!.getExtendsClassName(entity, typeOfGenClass)
+                "open class " + commonFunction.getClassName(entity, typeOfGenClass) + commonFunction.getExtendsClassName(entity, typeOfGenClass)
 
-        val body = classBodyService!!.genCode(entity, typeOfGenClass)
+        val body = classBodyService.genCode(entity, typeOfGenClass)
 
-        val import = genImportService!!.genCode(entity, typeOfGenClass)
+        val import = genImportService.genCode(entity, typeOfGenClass)
 
         code.append(import)
         code.append(annotationClass)

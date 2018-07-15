@@ -30,7 +30,7 @@ public class UploadStorage {
     private ZipUtil zipUtil;
 
     @Autowired
-    private HelpFunction helpFunction;
+    private CommonFunctionUploads helpFunction;
 
     @Autowired
     private GsonTune gsonTune;

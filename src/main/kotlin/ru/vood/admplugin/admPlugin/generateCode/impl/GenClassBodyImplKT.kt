@@ -69,7 +69,7 @@ class GenClassBodyImplKT : GenClassBodyServiceKT {
     }
 
     @JvmOverloads
-    override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
+    override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass ): StringBuilder {
         val code = StringBuilder()
         return if (typeOfGenClass == TypeOfGenClass.ENTITY_CLASS) genCodeEntiy(entity) else code
     }
