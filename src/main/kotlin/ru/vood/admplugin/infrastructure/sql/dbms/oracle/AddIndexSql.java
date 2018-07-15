@@ -7,7 +7,8 @@ import ru.vood.core.runtime.exception.ApplicationErrorException;
 
 import java.util.List;
 
-import static ru.vood.admplugin.infrastructure.sql.sqlInterfaces.SQLInterface.INDEX_PREFIX;
+import static ru.vood.admplugin.infrastructure.applicationConst.Const.INDEX_PREFIX;
+
 
 //@Service
 @Deprecated

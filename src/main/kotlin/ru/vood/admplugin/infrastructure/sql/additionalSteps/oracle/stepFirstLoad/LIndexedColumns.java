@@ -10,7 +10,8 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 
 import java.util.ArrayList;
 
-import static ru.vood.admplugin.infrastructure.sql.sqlInterfaces.SQLInterface.COLLECTION;
+import static ru.vood.admplugin.infrastructure.applicationConst.Const.COLLECTION;
+
 
 @Service
 public class LIndexedColumns {

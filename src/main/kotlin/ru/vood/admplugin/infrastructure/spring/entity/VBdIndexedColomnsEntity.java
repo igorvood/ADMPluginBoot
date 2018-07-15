@@ -6,8 +6,9 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepFirstLoad
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+import static ru.vood.admplugin.infrastructure.applicationConst.Const.COLLECTION;
 import static ru.vood.admplugin.infrastructure.spring.entity.ParentForAll.SCHEMA;
-import static ru.vood.admplugin.infrastructure.sql.sqlInterfaces.SQLInterface.COLLECTION;
+
 
 @Entity
 @Table(name = LIndexedColumns.tableName, schema = SCHEMA, catalog = "")

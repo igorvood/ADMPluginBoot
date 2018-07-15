@@ -14,7 +14,8 @@ import ru.vood.admplugin.infrastructure.spring.referenceBook.Tables;
 import ru.vood.admplugin.infrastructure.sql.QueryTableNew;
 import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToCreate.abstr.StepsCreateAndDropServise;
 
-import static ru.vood.admplugin.infrastructure.sql.sqlInterfaces.SQLInterface.COLLECTION;
+import static ru.vood.admplugin.infrastructure.applicationConst.Const.COLLECTION;
+
 
 @Component
 public class AddArrayImpl implements StepsCreateAndDropServise {
