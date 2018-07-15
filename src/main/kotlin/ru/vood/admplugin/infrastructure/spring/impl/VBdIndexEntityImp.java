@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntity;
-import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColomnsEntity;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
 import ru.vood.admplugin.infrastructure.spring.intf.CommonFunctionService;
@@ -56,7 +56,7 @@ public class VBdIndexEntityImp implements VBdIndexEntityService {
                 "  join fetch a1.parent a3  " +
 //                "  join fetch a1.typeValue a5 " +
                 "  join fetch a1.typeObject a6 " +
-                // "  left join VBdIndexedColomnsEntity a7 on  a1.columns= a7.collectionId " +
+                // "  left join VBdIndexedColumnsEntity a7 on  a1.columns= a7.collectionId " +
                 //"  join fetch a1.colomnsEntities a7 " +
                 " where a1.parent = :parent " +
                 //" order by a2.id " +
@@ -64,9 +64,9 @@ public class VBdIndexEntityImp implements VBdIndexEntityService {
                 .setParameter("parent", parent);
         List<VBdIndexEntity> listVBdIndexEntity = query.getResultList();
         List<BigDecimal> bigDecimals = listVBdIndexEntity.stream().map(q -> q.getColumns()).collect(Collectors.toList());
-        List<VBdIndexedColomnsEntity> indexedColomnsEntities = indexedColomnsEntityRepository.findByCollectionIdIn(bigDecimals);
+        List<VBdIndexedColumnsEntity> indexedColomnsEntities = indexedColomnsEntityRepository.findByCollectionIdIn(bigDecimals);
         for (VBdIndexEntity li : listVBdIndexEntity) {
-            for (VBdIndexedColomnsEntity col : indexedColomnsEntities) {
+            for (VBdIndexedColumnsEntity col : indexedColomnsEntities) {
                 if (li.getColumns().equals(col.getCollectionId())) {
                     li.addColomn(col);
                 }

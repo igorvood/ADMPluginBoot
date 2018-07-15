@@ -1,17 +1,17 @@
 package ru.vood.admplugin.infrastructure.spring.intf;
 
-import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColomnsEntity;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public interface VBdIndexedColomnsEntityService {
 
-    VBdIndexedColomnsEntity save(VBdIndexedColomnsEntity entity);
+    VBdIndexedColumnsEntity save(VBdIndexedColumnsEntity entity);
 
-    void delete(VBdIndexedColomnsEntity entity);
+    void delete(VBdIndexedColumnsEntity entity);
 
-    List<VBdIndexedColomnsEntity> findByCollectionId(BigDecimal collectionId);
+    List<VBdIndexedColumnsEntity> findByCollectionId(BigDecimal collectionId);
 
-    List<VBdIndexedColomnsEntity> findByCollectionIdIn(List<BigDecimal> collectionId);
+    List<VBdIndexedColumnsEntity> findByCollectionIdIn(List<BigDecimal> collectionId);
 }

@@ -3,7 +3,7 @@ package ru.vood.admplugin.dialogs.ExtSwing;
 
 import ru.vood.admplugin.infrastructure.spring.context.LoadedCTX;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntity;
-import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColomnsEntity;
+import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexEntityService;
@@ -62,7 +62,7 @@ public class JDBTableIndexsModel extends AbstractTableModel {
                 return rows.get(rowIndex).getParent().getName();
             }
             if (columnIndex == 3) {
-                List<VBdIndexedColomnsEntity> indexedColomnsEntities = ((VBdIndexEntity) rows.get(rowIndex)).getColomnsEntities();
+                List<VBdIndexedColumnsEntity> indexedColomnsEntities = ((VBdIndexEntity) rows.get(rowIndex)).getColomnsEntities();
                 if (indexedColomnsEntities != null && !indexedColomnsEntities.isEmpty()) {
                     String colS = indexedColomnsEntities.stream()
                             .map(entity -> entity.getColomnRef().getCode())

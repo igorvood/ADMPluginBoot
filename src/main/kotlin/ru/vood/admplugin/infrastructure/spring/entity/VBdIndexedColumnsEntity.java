@@ -12,7 +12,7 @@ import static ru.vood.admplugin.infrastructure.spring.entity.ParentForAll.SCHEMA
 
 @Entity
 @Table(name = LIndexedColumns.tableName, schema = SCHEMA, catalog = "")
-public class VBdIndexedColomnsEntity {
+public class VBdIndexedColumnsEntity {
     @Id
     @GenericGenerator(name = "seqId", strategy = "ru.vood.admplugin.infrastructure.spring.entity.GeneratorId")
     @GeneratedValue(generator = "seqId")

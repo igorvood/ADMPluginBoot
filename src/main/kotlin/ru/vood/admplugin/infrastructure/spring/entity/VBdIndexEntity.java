@@ -25,11 +25,11 @@ public class VBdIndexEntity extends VBdObjectEntity {
 //            joinColumns = @JoinColumn(name = "CONTACT_ID"),
 //            inverseJoinColumns = @JoinColumn(name = "HOBBY_ID"))
     //@OneToMany(fetch = FetchType.EAGER, mappedBy = "collectionId")//(mappedBy = "columns")//(fetch = FetchType.LAZY)
-//    @JoinColumn(table = "VBdIndexedColomnsEntity", name = "VBdIndexedColomnsEntity", referencedColumnName = "columns")
+//    @JoinColumn(table = "VBdIndexedColumnsEntity", name = "VBdIndexedColumnsEntity", referencedColumnName = "columns")
 /*    @OneToMany//(mappedBy = "collectionId", fetch = FetchType.EAGER)
     @JoinColumn(name = "COLUMNS", referencedColumnName = COLLECTION)*/
     @Transient
-    private List<VBdIndexedColomnsEntity> colomnsEntities;
+    private List<VBdIndexedColumnsEntity> colomnsEntities;
 
     //    @Basic
     @Column(name = "COLUMNS", nullable = true, length = 1)
@@ -52,11 +52,11 @@ public class VBdIndexEntity extends VBdObjectEntity {
         this.globalI = globalI;
     }
 
-    public List<VBdIndexedColomnsEntity> getColomnsEntities() {
+    public List<VBdIndexedColumnsEntity> getColomnsEntities() {
         return colomnsEntities;
     }
 
-    public void setColomnsEntities(List<VBdIndexedColomnsEntity> colomnsEntities) {
+    public void setColomnsEntities(List<VBdIndexedColumnsEntity> colomnsEntities) {
         this.colomnsEntities = colomnsEntities;
     }
 
@@ -68,34 +68,34 @@ public class VBdIndexEntity extends VBdObjectEntity {
         this.columns = columns;
     }
 
-    public void addColomn(VBdIndexedColomnsEntity entity) {
+    public void addColomn(VBdIndexedColumnsEntity entity) {
         if (columns == null) {
             columns = LoadedCTX.getService(CommonFunctionService.class).nextId();
         }
         if (colomnsEntities == null) {
-            colomnsEntities = new ArrayList<VBdIndexedColomnsEntity>();
+            colomnsEntities = new ArrayList<VBdIndexedColumnsEntity>();
         }
         entity.setCollectionId(columns);
         colomnsEntities.add(entity);
     }
 
     public void addColomn(VBdColumnsEntity entity) {
-        VBdIndexedColomnsEntity indexedColomnsEntity = new VBdIndexedColomnsEntity();
+        VBdIndexedColumnsEntity indexedColomnsEntity = new VBdIndexedColumnsEntity();
         indexedColomnsEntity.setColomnRef(entity);
         addColomn(indexedColomnsEntity);
     }
 
 
-//    @OneToMany(targetEntity = VBdIndexedColomnsEntity.class)
+//    @OneToMany(targetEntity = VBdIndexedColumnsEntity.class)
 //    @LazyCollection(LazyCollectionOption.FALSE)
 //    @JoinColumn(name = "COLLECTIONID")
-//    private List<VBdIndexedColomnsEntity> colomnsEntities1;
+//    private List<VBdIndexedColumnsEntity> colomnsEntities1;
 //
-//    public List<VBdIndexedColomnsEntity> getColomnsEntities1() {
+//    public List<VBdIndexedColumnsEntity> getColomnsEntities1() {
 //        return colomnsEntities1;
 //    }
 //
-//    public void setColomnsEntities1(List<VBdIndexedColomnsEntity> colomnsEntities1) {
+//    public void setColomnsEntities1(List<VBdIndexedColumnsEntity> colomnsEntities1) {
 //        this.colomnsEntities1 = colomnsEntities1;
 //    }
 }
