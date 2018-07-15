@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
 import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdObjectEntityService;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdTableEntityService;
 import ru.vood.admplugin.infrastructure.spring.referenceBook.ObjectTypes;
@@ -21,7 +21,7 @@ public class LTableInsert {
     private VBdObjectEntityService objectEntityService;
 
     @Autowired
-    private VBdColomnsEntityService colomnsEntityService;
+    private VBdColumnsEntityService colomnsEntityService;
 
     public QueryTableNew additionOne() throws CoreExeption {
 

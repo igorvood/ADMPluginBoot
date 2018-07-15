@@ -8,7 +8,7 @@ import ru.vood.admplugin.infrastructure.spring.entity.VBdColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
 import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
 import ru.vood.admplugin.infrastructure.spring.intf.CommonFunctionService;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.repository.VBdColomnsEntityRepository;
 
 import javax.persistence.EntityManager;
@@ -19,7 +19,7 @@ import java.util.List;
 @Repository
 @Transactional
 
-public class VBdColomnsEntityImpl /*extends VBdObjectEntityImpl /*ParentForAllImpl*/ implements VBdColomnsEntityService {
+public class VBdColumnsEntityImpl /*extends VBdObjectEntityImpl /*ParentForAllImpl*/ implements VBdColumnsEntityService {
     @Autowired
     protected EntityManager em;
     @Autowired

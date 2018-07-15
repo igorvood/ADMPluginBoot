@@ -6,7 +6,7 @@ import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
 
 import java.util.List;
 
-public interface VBdColomnsEntityService /*extends  ParentForAllServise/*extends VBdObjectEntityService*/ {
+public interface VBdColumnsEntityService /*extends  ParentForAllServise/*extends VBdObjectEntityService*/ {
 
     VBdColumnsEntity save(VBdColumnsEntity entity);
 

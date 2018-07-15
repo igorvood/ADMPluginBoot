@@ -7,7 +7,7 @@ import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
 import ru.vood.admplugin.infrastructure.spring.intf.CommonFunctionService;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexEntityService;
 import ru.vood.admplugin.infrastructure.spring.referenceBook.ObjectTypes;
 import ru.vood.admplugin.infrastructure.spring.referenceBook.Tables;
@@ -35,7 +35,7 @@ public class AddArrayImpl implements StepsCreateAndDropServise {
 //    private AddIndexSql addIndexSql;
 
     @Autowired
-    private VBdColomnsEntityService colomnsEntityService;
+    private VBdColumnsEntityService colomnsEntityService;
 
     @Autowired
     private VBdIndexEntityService indexEntityService;

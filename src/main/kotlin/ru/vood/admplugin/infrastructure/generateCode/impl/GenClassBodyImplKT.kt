@@ -9,7 +9,7 @@ import ru.vood.admplugin.infrastructure.generateCode.impl.intf.addingImport.AddA
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.addingImport.AddJavaClass
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.addingImport.ParamOfAnnotation
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService
 import java.math.BigDecimal
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
@@ -21,7 +21,7 @@ class GenClassBodyImplKT : GenClassBodyServiceKT {
     private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
 
     @Autowired
-    private lateinit var colomnsEntityService: VBdColomnsEntityService
+    private lateinit var colomnsEntityService: VBdColumnsEntityService
 
     @Autowired
     private lateinit var genFieldsService: GenFieldsServiceKT

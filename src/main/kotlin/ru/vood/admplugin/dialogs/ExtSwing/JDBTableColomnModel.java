@@ -4,7 +4,7 @@ import ru.vood.admplugin.infrastructure.spring.context.LoadedCTX;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -143,7 +143,7 @@ public class JDBTableColomnModel extends AbstractTableModel {
         Query<VBdColomnsEntity> bdColomnsResultSetToObject = new Query<VBdColomnsEntity>(bdColomns, AppConst.getTune(ListTunes.PREFIX_COLOMN));
         TreeSet<VBdColomnsEntity> colomnsTreeSet = bdColomnsResultSetToObject.viewToSet(SystemObject.VW_COLOMN_FOR_TABLE, new NameValuePair("PARENT", bdObject.getId().toString()));*/
 
-        VBdColomnsEntityService vBdColomnsEntityService = LoadedCTX.getService(VBdColomnsEntityService.class);
+        VBdColumnsEntityService vBdColomnsEntityService = LoadedCTX.getService(VBdColumnsEntityService.class);
         List<VBdColumnsEntity> colomns = vBdColomnsEntityService.findByParent(bdObject);
         if (colomns != null) {
             for (VBdColumnsEntity col : colomns) {

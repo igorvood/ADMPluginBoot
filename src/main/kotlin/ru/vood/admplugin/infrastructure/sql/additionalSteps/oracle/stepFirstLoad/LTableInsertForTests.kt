@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import ru.vood.admplugin.infrastructure.spring.entity.VBdColumnsEntity
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService
 import ru.vood.admplugin.infrastructure.spring.intf.VBdObjectEntityService
 import ru.vood.admplugin.infrastructure.spring.intf.VBdTableEntityService
 import ru.vood.admplugin.infrastructure.spring.referenceBook.ObjectTypes
@@ -22,7 +22,7 @@ class LTableInsertForTests {
     private lateinit var objectEntityService: VBdObjectEntityService
 
     @Autowired
-    private lateinit var colomnsEntityService: VBdColomnsEntityService
+    private lateinit var colomnsEntityService: VBdColumnsEntityService
 
     fun additionOne(): QueryTableNew {
 

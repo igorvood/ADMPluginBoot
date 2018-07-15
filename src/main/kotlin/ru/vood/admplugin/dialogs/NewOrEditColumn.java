@@ -8,7 +8,7 @@ import ru.vood.admplugin.infrastructure.spring.context.LoadedCTX;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity;
-import ru.vood.admplugin.infrastructure.spring.intf.VBdColomnsEntityService;
+import ru.vood.admplugin.infrastructure.spring.intf.VBdColumnsEntityService;
 import ru.vood.admplugin.infrastructure.spring.referenceBook.ObjectTypes;
 
 import javax.swing.*;
@@ -96,7 +96,7 @@ public class NewOrEditColumn extends JAddDialog {
 
             colomns.setTypeObject(ObjectTypes.getCOLOMN());
             colomns.setTypeValue((VBdTableEntity) ((DefaultMutableTreeNode) tree1.getLastSelectedPathComponent()).getUserObject());
-            VBdColomnsEntityService colomnsEntityService = LoadedCTX.getService(VBdColomnsEntityService.class);
+            VBdColumnsEntityService colomnsEntityService = LoadedCTX.getService(VBdColumnsEntityService.class);
             VBdColumnsEntity newColomn = (VBdColumnsEntity) colomnsEntityService.save(colomns);
             this.setAddedObj(newColomn);
 
