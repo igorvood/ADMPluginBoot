@@ -1,11 +1,13 @@
 package ru.vood.admplugin.infrastructure.generateCode.impl
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenAnnotationClassServiceKT
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenAnyPartKT
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenClassBodyServiceKT
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenImportServiceKT
+import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
 
 @Component
@@ -13,7 +15,8 @@ class GenClassServiceKT(@Autowired
                         val commonFunction: GenCodeCommonFunctionKT,
 
                         @Autowired
-                        val genPackageImpl: GenPackageImplKT,
+                        @Qualifier("genPackageImplKT")
+                        val genPackageImpl: GenAnyPartKT<VBdObjectEntity>,
 
                         @Autowired
                         val genImportService: GenImportServiceKT,

@@ -37,10 +37,10 @@ class GenClassBodyImplKT(@Autowired
             code.append(getIdField())
         }
 
-        val colomnsEntities = columnsEntityService.findByParent(entity)
+        val columnsEntities = columnsEntityService.findByParent(entity)
 
-        for (colomn in colomnsEntities) {
-            code.append(genFieldsService.genCode(colomn, TypeOfGenClass.ENTITY_CLASS))
+        for (column in columnsEntities) {
+            code.append(genFieldsService.genCode(column, TypeOfGenClass.ENTITY_CLASS))
         }
 
         return code
