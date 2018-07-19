@@ -29,25 +29,25 @@ public class PluginTunes {
     private String sid;
 
     @Value("${tableSpaseSysTable}")
-    private String tableSpaseSysTable;
+    private String tableSpaceSysTable;
 
     @Value("${tableSpaseSysIndex}")
-    private String tableSpaseSysIndex;
+    private String tableSpaceSysIndex;
 
     @Value("${tableSpaseUserTable}")
-    private String tableSpaseUserTable;
+    private String tableSpaceUserTable;
 
     @Value("${tableSpaseUserIndex}")
-    private String tableSpaseUserIndex;
+    private String tableSpaceUserIndex;
 
     @Value("${encodding}")
-    private String encodding;
+    private String encoding;
 
     @Value("${prefixTable}")
     private String prefixTable;
 
     @Value("${prefixColomn}")
-    private String prefixColomn;
+    private String prefixColumn;
 
     @Value("${dbmsType}")
     private String dbmsType;
@@ -123,44 +123,44 @@ public class PluginTunes {
         this.sid = sid;
     }
 
-    public String getTableSpaseSysTable() {
-        return tableSpaseSysTable;
+    public String getTableSpaceSysTable() {
+        return tableSpaceSysTable;
     }
 
-    public void setTableSpaseSysTable(String tableSpaseSysTable) {
-        this.tableSpaseSysTable = tableSpaseSysTable;
+    public void setTableSpaceSysTable(String tableSpaceSysTable) {
+        this.tableSpaceSysTable = tableSpaceSysTable;
     }
 
-    public String getTableSpaseSysIndex() {
-        return tableSpaseSysIndex;
+    public String getTableSpaceSysIndex() {
+        return tableSpaceSysIndex;
     }
 
-    public void setTableSpaseSysIndex(String tableSpaseSysIndex) {
-        this.tableSpaseSysIndex = tableSpaseSysIndex;
+    public void setTableSpaceSysIndex(String tableSpaceSysIndex) {
+        this.tableSpaceSysIndex = tableSpaceSysIndex;
     }
 
-    public String getTableSpaseUserTable() {
-        return tableSpaseUserTable;
+    public String getTableSpaceUserTable() {
+        return tableSpaceUserTable;
     }
 
-    public void setTableSpaseUserTable(String tableSpaseUserTable) {
-        this.tableSpaseUserTable = tableSpaseUserTable;
+    public void setTableSpaceUserTable(String tableSpaceUserTable) {
+        this.tableSpaceUserTable = tableSpaceUserTable;
     }
 
-    public String getTableSpaseUserIndex() {
-        return tableSpaseUserIndex;
+    public String getTableSpaceUserIndex() {
+        return tableSpaceUserIndex;
     }
 
-    public void setTableSpaseUserIndex(String tableSpaseUserIndex) {
-        this.tableSpaseUserIndex = tableSpaseUserIndex;
+    public void setTableSpaceUserIndex(String tableSpaceUserIndex) {
+        this.tableSpaceUserIndex = tableSpaceUserIndex;
     }
 
-    public String getEncodding() {
-        return encodding;
+    public String getEncoding() {
+        return encoding;
     }
 
-    public void setEncodding(String encodding) {
-        this.encodding = encodding;
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
     }
 
     public String getPrefixTable() {
@@ -171,12 +171,12 @@ public class PluginTunes {
         this.prefixTable = prefixTable;
     }
 
-    public String getPrefixColomn() {
-        return prefixColomn;
+    public String getPrefixColumn() {
+        return prefixColumn;
     }
 
-    public void setPrefixColomn(String prefixColomn) {
-        this.prefixColomn = prefixColomn;
+    public void setPrefixColumn(String prefixColumn) {
+        this.prefixColumn = prefixColumn;
     }
 
     public String getDbmsType() {

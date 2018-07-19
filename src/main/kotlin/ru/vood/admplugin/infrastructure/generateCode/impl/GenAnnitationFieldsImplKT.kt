@@ -13,8 +13,13 @@ import javax.persistence.*
 @Component
 class GenAnnitationFieldsImplKT : GenAnnitationFieldsServiceKT {
 
+
+    private val addAnnotationClass: AddAnnotationClass
+
     @Autowired
-    private lateinit var addAnnotationClass: AddAnnotationClass
+    constructor(addAnnotationClass: AddAnnotationClass) {
+        this.addAnnotationClass = addAnnotationClass
+    }
 
 
     override fun genCode(entity: VBdColumnsEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {

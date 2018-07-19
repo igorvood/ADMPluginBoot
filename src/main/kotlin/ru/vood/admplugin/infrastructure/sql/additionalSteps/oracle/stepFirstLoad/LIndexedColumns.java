@@ -37,7 +37,7 @@ public class LIndexedColumns {
                 "(ID    NUMBER not null,\n" +
                 COLLECTION + " NUMBER,\n" +
                 "COLUMN_REF   NUMBER  not null \n" +
-                ") tablespace \n" + pluginTunes.getTableSpaseSysTable() + "\n" +
+                ") tablespace \n" + pluginTunes.getTableSpaceSysTable() + "\n" +
                 pluginTunes.getStorageTable();
         queryTable.add(s);
 

@@ -25,12 +25,17 @@ import java.util.List;
 @Transactional
 public class VBdObjectEntityImpl /*extends ParentForAllImpl*/ implements VBdObjectEntityService {
 
-    @Autowired
-    protected VBdObjectEntityRepository vBdObjectEntityRepository;
-    @Autowired
+
     protected EntityManager em;
-    @Autowired
+    protected VBdObjectEntityRepository vBdObjectEntityRepository;
     private CommonFunctionService commonFunctionService;
+
+    @Autowired
+    public VBdObjectEntityImpl(EntityManager em, VBdObjectEntityRepository vBdObjectEntityRepository, CommonFunctionService commonFunctionService) {
+        this.em = em;
+        this.vBdObjectEntityRepository = vBdObjectEntityRepository;
+        this.commonFunctionService = commonFunctionService;
+    }
 
     @Cacheable("сacheFromDBTree")
     public ArrayList<VBdObjectEntity> findByTypeObjectCodeIn(String... codeS) {

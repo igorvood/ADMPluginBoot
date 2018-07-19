@@ -31,7 +31,7 @@ public class LIndex {
                 "GLOBAL_I   VARCHAR2(1),\n" +
                 "COLUMNS   NUMBER not null,\n" +
                 "LIST_COLUMNS   VARCHAR2(250) --not null -- Старая колонка \n" +
-                ") tablespace \n" + pluginTunes.getTableSpaseSysTable() + "\n" +
+                ") tablespace \n" + pluginTunes.getTableSpaceSysTable() + "\n" +
                 pluginTunes.getStorageTable();
         queryTable.add(s);
 

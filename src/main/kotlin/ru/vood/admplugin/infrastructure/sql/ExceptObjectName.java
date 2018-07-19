@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import java.util.HashSet;
 
 @Component
-public class ExeptObjectName {
+public class ExceptObjectName {
     private static HashSet<String> exeptNames;
 
     @PostConstruct

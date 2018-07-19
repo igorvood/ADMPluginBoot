@@ -8,11 +8,15 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Service
 public class AddConstraintSql {
 
-    @Autowired
     private PluginTunes pluginTunes;
 
-    @Autowired
     private LimitingNameDBMS limitingNameDBMS;
+
+    @Autowired
+    public AddConstraintSql(PluginTunes pluginTunes, LimitingNameDBMS limitingNameDBMS) {
+        this.pluginTunes = pluginTunes;
+        this.limitingNameDBMS = limitingNameDBMS;
+    }
 
     public String getSql(String tableName, String colomn, String refTableName, String refColomn) {
         String s = "alter table " + pluginTunes.getUser() + "." + tableName + "\n" +

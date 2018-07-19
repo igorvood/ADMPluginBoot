@@ -6,10 +6,8 @@ import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenAnyPartKT
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity
 
 @Component
-class GenPackageImplKT : GenAnyPartKT<VBdObjectEntity> {
-
-    @Autowired
-    private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
+class GenPackageImplKT(@Autowired
+                       val genCodeCommonFunction: GenCodeCommonFunctionKT) : GenAnyPartKT<VBdObjectEntity> {
 
     override fun genCode(entity: VBdObjectEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
         return StringBuilder("package " + genCodeCommonFunction.getPackageName(typeOfGenClass) + ";\n\n")

@@ -14,12 +14,19 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 public class EditTableImpl implements StepsEditServise {
 
 
-    @Autowired
-    @Qualifier("editColomnImpl")
+    //    @Autowired
+//    @Qualifier("editColumnImpl")
     private StepsEditServise nextStep;
 
-    @Autowired
+    //    @Autowired
     private PluginTunes tunes;
+
+    @Autowired
+    public EditTableImpl(@Qualifier("editColumnImpl") StepsEditServise nextStep
+            , PluginTunes tunes) {
+        this.nextStep = nextStep;
+        this.tunes = tunes;
+    }
 
     @Override
     public QueryTableNew editDDL(VBdObjectEntity bdObjectOld, VBdObjectEntity bdObjectNew) {

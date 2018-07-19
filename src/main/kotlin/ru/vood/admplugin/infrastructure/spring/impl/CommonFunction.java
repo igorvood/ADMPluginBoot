@@ -15,8 +15,12 @@ import java.math.BigDecimal;
 @Transactional
 public class CommonFunction implements CommonFunctionService {
 
-    @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    public CommonFunction(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     public BigDecimal nextId() {
         return (BigDecimal) entityManager.createNativeQuery("SELECT SEQ_ID.nextval from dual").getResultList().get(0);

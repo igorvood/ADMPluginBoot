@@ -13,16 +13,17 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Component
 public class AddPrimaryKeyImpl implements StepsCreateAndDropServise {
 
-/*    @Autowired
-    @Qualifier("addColomnImpl")
-    private StepsCreateServise nextStep;*/
-
-
-    @Autowired
+    //    @Autowired
     private PluginTunes tunes;
 
-    @Autowired
+    //    @Autowired
     private AddPrimaryKeySql primaryKeySql;
+
+    @Autowired
+    public AddPrimaryKeyImpl(PluginTunes tunes, AddPrimaryKeySql primaryKeySql) {
+        this.tunes = tunes;
+        this.primaryKeySql = primaryKeySql;
+    }
 
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {
 

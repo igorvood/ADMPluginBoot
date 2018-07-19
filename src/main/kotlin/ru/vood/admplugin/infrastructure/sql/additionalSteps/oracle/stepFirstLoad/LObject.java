@@ -42,7 +42,7 @@ public class LObject {
                 "TYPE_OBJECT NUMBER not null,\n" +
                 "DATE_CREATE DATE default sysdate,\n" +
                 "JAVA_CLASS VARCHAR2(512) not null\n" +
-                ") tablespace \n" + pluginTunes.getTableSpaseSysTable() + "\n " +
+                ") tablespace \n" + pluginTunes.getTableSpaceSysTable() + "\n " +
                 pluginTunes.getStorageTable();
         queryTable.add(s);
 

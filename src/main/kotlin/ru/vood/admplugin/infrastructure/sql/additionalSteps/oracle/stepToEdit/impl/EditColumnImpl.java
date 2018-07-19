@@ -11,21 +11,14 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToEdit.ab
 import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 
 @Component
-public class EditColomnImpl implements StepsEditServise {
+public class EditColumnImpl implements StepsEditServise {
 
-//    @Autowired
-//    @Qualifier("addIndexImpl")
-//    private StepsCreateServise nextStep;
-
-    @Autowired
     private PluginTunes tunes;
 
-//    @Autowired
-//    private AddConstraintSql constraintSql;
-//
-//    @Autowired
-//    private TuneChainStepsCreate stepsCreate;
-
+    @Autowired
+    public EditColumnImpl(PluginTunes tunes) {
+        this.tunes = tunes;
+    }
 
     @Override
     public QueryTableNew editDDL(VBdObjectEntity bdObjectOld, VBdObjectEntity bdObjectNew) {

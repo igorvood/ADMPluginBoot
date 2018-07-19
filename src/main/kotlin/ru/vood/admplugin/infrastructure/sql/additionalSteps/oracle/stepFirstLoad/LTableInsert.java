@@ -99,7 +99,7 @@ public class LTableInsert {
 //        colomnsEntity.setParent(bdObject_table_aderss);
 //        colomnsEntity.setTypeObject(ObjectTypes.getCOLOMN());
 //        colomnsEntity.setJavaClass(colomnsEntity.getClass().toString());
-//        colomnsEntity = colomnsEntityService.save(colomnsEntity);
+//        colomnsEntity = columnsEntityService.save(colomnsEntity);
 //
 //        colomnsEntity = new VBdColumnsEntity();
 //        colomnsEntity.setCode("STREET");
@@ -109,7 +109,7 @@ public class LTableInsert {
 //        colomnsEntity.setParent(bdObject_table_aderss);
 //        colomnsEntity.setTypeObject(ObjectTypes.getCOLOMN());
 //        colomnsEntity.setJavaClass(colomnsEntity.getClass().toString());
-//        colomnsEntity = colomnsEntityService.save(colomnsEntity);
+//        colomnsEntity = columnsEntityService.save(colomnsEntity);
 //
 //        VBdTableEntity table = new VBdTableEntity();
 //        table.setCode(bdObject_table_aderss.getCode() + "_ARR");
@@ -162,7 +162,7 @@ public class LTableInsert {
 //        colomnsEntity.setParent(bdObject_table_new);
 //        colomnsEntity.setTypeObject(ObjectTypes.getCOLOMN());
 //        colomnsEntity.setJavaClass(colomnsEntity.getClass().toString());
-//        colomnsEntity = colomnsEntityService.save(colomnsEntity);
+//        colomnsEntity = columnsEntityService.save(colomnsEntity);
 //
 //        colomnsEntity = new VBdColumnsEntity();
 //        colomnsEntity.setCode("DATE_BIRTH");
@@ -172,7 +172,7 @@ public class LTableInsert {
 //        colomnsEntity.setParent(bdObject_table_new);
 //        colomnsEntity.setTypeObject(ObjectTypes.getCOLOMN());
 //        colomnsEntity.setJavaClass(colomnsEntity.getClass().toString());
-//        colomnsEntity = colomnsEntityService.save(colomnsEntity);
+//        colomnsEntity = columnsEntityService.save(colomnsEntity);
 
 
         return null;

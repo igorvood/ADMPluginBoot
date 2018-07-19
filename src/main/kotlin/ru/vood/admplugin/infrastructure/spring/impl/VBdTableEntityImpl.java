@@ -21,12 +21,16 @@ import java.util.List;
 @Transactional
 public class VBdTableEntityImpl /*extends VBdObjectEntityImpl/*ParentForAllImpl*/ implements VBdTableEntityService {
 
-    @Autowired
     protected EntityManager em;
-    @Autowired
     private VBdTableEntityRepository bdTableEntityRepository;
-    @Autowired
     private CommonFunctionService commonFunction;
+
+    @Autowired
+    public VBdTableEntityImpl(EntityManager em, VBdTableEntityRepository bdTableEntityRepository, CommonFunctionService commonFunction) {
+        this.em = em;
+        this.bdTableEntityRepository = bdTableEntityRepository;
+        this.commonFunction = commonFunction;
+    }
 
     @Override
     public VBdTableEntity save(VBdTableEntity entity) {

@@ -12,11 +12,14 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToEdit.ab
 @Component
 public class EditIndexImpl implements StepsEditServise {
 
-    @Autowired
     private AddIndexImpl addIndex;
+    private DropIndexImpl dropServise;
 
     @Autowired
-    private DropIndexImpl dropServise;
+    public EditIndexImpl(AddIndexImpl addIndex, DropIndexImpl dropServise) {
+        this.addIndex = addIndex;
+        this.dropServise = dropServise;
+    }
 
     @Override
     public QueryTableNew editDDL(VBdObjectEntity bdObjectOld, VBdObjectEntity bdObjectNew) {

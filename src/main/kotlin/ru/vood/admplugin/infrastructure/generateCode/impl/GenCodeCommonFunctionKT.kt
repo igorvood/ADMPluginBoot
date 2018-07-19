@@ -7,9 +7,8 @@ import ru.vood.admplugin.infrastructure.spring.referenceBook.RootObjects
 import ru.vood.admplugin.infrastructure.tune.PluginTunes
 
 @Component
-class GenCodeCommonFunctionKT {
-    @Autowired
-    private lateinit var pluginTunes: PluginTunes
+class GenCodeCommonFunctionKT(@Autowired
+                              val pluginTunes: PluginTunes) {
 
     fun getTableName(entity: VBdObjectEntity): StringBuilder {
         return StringBuilder((pluginTunes.prefixTable + entity.code).toUpperCase())

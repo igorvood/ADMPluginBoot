@@ -18,15 +18,17 @@ import java.util.List;
 @Service//("jpaVBdColomnsEntityService")
 @Repository
 @Transactional
-
 public class VBdColumnsEntityImpl /*extends VBdObjectEntityImpl /*ParentForAllImpl*/ implements VBdColumnsEntityService {
-    @Autowired
     protected EntityManager em;
-    @Autowired
     private VBdColomnsEntityRepository bdColomnsEntityRepository;
+    private CommonFunctionService commonFunctionService;
 
     @Autowired
-    private CommonFunctionService commonFunctionService;
+    public VBdColumnsEntityImpl(EntityManager em, VBdColomnsEntityRepository bdColomnsEntityRepository, CommonFunctionService commonFunctionService) {
+        this.em = em;
+        this.bdColomnsEntityRepository = bdColomnsEntityRepository;
+        this.commonFunctionService = commonFunctionService;
+    }
 
     @Override
     public List<VBdColumnsEntity> findByParent(VBdTableEntity parent) {

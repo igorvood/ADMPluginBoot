@@ -15,22 +15,20 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Component
-class GenClassBodyImplKT : GenClassBodyServiceKT {
+class GenClassBodyImplKT(@Autowired
+                         val genCodeCommonFunction: GenCodeCommonFunctionKT,
 
-    @Autowired
-    private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
+                         @Autowired
+                         val columnsEntityService: VBdColumnsEntityService,
 
-    @Autowired
-    private lateinit var colomnsEntityService: VBdColumnsEntityService
+                         @Autowired
+                         val genFieldsService: GenFieldsServiceKT,
 
-    @Autowired
-    private lateinit var genFieldsService: GenFieldsServiceKT
+                         @Autowired
+                         val addAnnotationClass: AddAnnotationClass,
 
-    @Autowired
-    private lateinit var addAnnotationClass: AddAnnotationClass
-
-    @Autowired
-    private lateinit var addJavaClass: AddJavaClass
+                         @Autowired
+                         val addJavaClass: AddJavaClass) : GenClassBodyServiceKT {
 
 
     private fun genCodeEntiy(entity: VBdTableEntity): StringBuilder {
@@ -39,7 +37,7 @@ class GenClassBodyImplKT : GenClassBodyServiceKT {
             code.append(getIdField())
         }
 
-        val colomnsEntities = colomnsEntityService.findByParent(entity)
+        val colomnsEntities = columnsEntityService.findByParent(entity)
 
         for (colomn in colomnsEntities) {
             code.append(genFieldsService.genCode(colomn, TypeOfGenClass.ENTITY_CLASS))
@@ -69,7 +67,7 @@ class GenClassBodyImplKT : GenClassBodyServiceKT {
     }
 
     @JvmOverloads
-    override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass ): StringBuilder {
+    override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
         val code = StringBuilder()
         return if (typeOfGenClass == TypeOfGenClass.ENTITY_CLASS) genCodeEntiy(entity) else code
     }

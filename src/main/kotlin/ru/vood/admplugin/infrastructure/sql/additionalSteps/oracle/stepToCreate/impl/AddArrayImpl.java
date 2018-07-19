@@ -20,25 +20,16 @@ import static ru.vood.admplugin.infrastructure.applicationConst.Const.COLLECTION
 @Component
 public class AddArrayImpl implements StepsCreateAndDropServise {
 
-    // todo сюда добавить ссылок
-//    @Autowired
-//    @Qualifier("addArrayTypeImpl")
-//    private StepsCreateServise nextStep;
-
-    @Autowired
     private CommonFunctionService commonFunction;
-
-//    @Autowired
-//    private PluginTunes pluginTunes;
-//
-//    @Autowired
-//    private AddIndexSql addIndexSql;
-
-    @Autowired
     private VBdColumnsEntityService colomnsEntityService;
+    private VBdIndexEntityService indexEntityService;
 
     @Autowired
-    private VBdIndexEntityService indexEntityService;
+    public AddArrayImpl(CommonFunctionService commonFunction, VBdColumnsEntityService columnsEntityService, VBdIndexEntityService indexEntityService) {
+        this.commonFunction = commonFunction;
+        this.colomnsEntityService = columnsEntityService;
+        this.indexEntityService = indexEntityService;
+    }
 
     @Override
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {

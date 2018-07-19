@@ -16,9 +16,6 @@ public class Tables {
 
     private static Map<String, VBdTableEntity> bdObjectEntityMap;
 
-//    @Autowired
-//    private VBdTableEntityRepository tableEntityRepository;
-
     private static VBdTableEntity get(String s) {
         if (bdObjectEntityMap == null) {
             bdObjectEntityMap = new HashMap<>();

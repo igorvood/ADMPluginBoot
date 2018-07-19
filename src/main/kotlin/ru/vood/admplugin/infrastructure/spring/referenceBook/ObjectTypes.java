@@ -1,6 +1,5 @@
 package ru.vood.admplugin.infrastructure.spring.referenceBook;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.vood.admplugin.infrastructure.spring.context.LoadedCTX;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectTypeEntity;
@@ -13,9 +12,6 @@ import java.util.Map;
 public class ObjectTypes {
 
     private static Map<String, VBdObjectTypeEntity> objectTypeEntityMap;
-
-    @Autowired
-    private VBdObjectTypeEntityRepository objectTypeEntityRepository;
 
     private static VBdObjectTypeEntity get(String s) {
         VBdObjectTypeEntity entity;

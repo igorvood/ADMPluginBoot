@@ -12,11 +12,17 @@ import java.io.File
 @Component
 class GeterateFile {
 
-    @Autowired
-    @Qualifier("genClassServiceKT")
-    lateinit var genAnyPartKT: GenAnyPartKT<VBdTableEntity>
+    val genAnyPartKT: GenAnyPartKT<VBdTableEntity>
 
-    lateinit var genCodeCommonFunctionKT: GenCodeCommonFunctionKT
+    val genCodeCommonFunctionKT: GenCodeCommonFunctionKT
+
+    @Autowired
+    constructor(@Qualifier("genClassServiceKT") genAnyPartKT: GenAnyPartKT<VBdTableEntity>
+                , genCodeCommonFunctionKT: GenCodeCommonFunctionKT) {
+        this.genAnyPartKT = genAnyPartKT
+        this.genCodeCommonFunctionKT = genCodeCommonFunctionKT
+    }
+
 
     @JvmOverloads
     fun getFile(tableEntity: VBdTableEntity, typeOfGenClass: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): File {

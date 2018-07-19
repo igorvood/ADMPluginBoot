@@ -12,9 +12,12 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToCreate.
 @Service
 public class TuneChainStepsCreate extends TuneChainStepsCreateServise {
 
-    @Autowired
-    @Qualifier("addTableImpl")
     private StepsCreateAndDropServise table;
+
+    @Autowired
+    public TuneChainStepsCreate(@Qualifier("addTableImpl") StepsCreateAndDropServise table) {
+        this.table = table;
+    }
 
     public void runChain(VBdObjectEntity bdobj) {
         // Вызов первого, остальное пойдет по цепочке

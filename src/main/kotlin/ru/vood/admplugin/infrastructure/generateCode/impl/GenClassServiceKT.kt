@@ -9,22 +9,21 @@ import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenImportServiceK
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
 
 @Component
-class GenClassServiceKT : GenAnyPartKT<VBdTableEntity> {
+class GenClassServiceKT(@Autowired
+                        val commonFunction: GenCodeCommonFunctionKT,
 
-    @Autowired
-    private lateinit var commonFunction: GenCodeCommonFunctionKT
+                        @Autowired
+                        val genPackageImpl: GenPackageImplKT,
 
-    @Autowired
-    private lateinit var genPackageImpl: GenPackageImplKT
+                        @Autowired
+                        val genImportService: GenImportServiceKT,
 
-    @Autowired
-    private lateinit var genImportService: GenImportServiceKT
+                        @Autowired
+                        val classBodyService: GenClassBodyServiceKT,
 
-    @Autowired
-    private lateinit var classBodyService: GenClassBodyServiceKT
+                        @Autowired
+                        val genAnnotationClassService: GenAnnotationClassServiceKT) : GenAnyPartKT<VBdTableEntity> {
 
-    @Autowired
-    private lateinit var genAnnotationClassService: GenAnnotationClassServiceKT
 
     override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
         val code = StringBuilder()

@@ -29,7 +29,7 @@ public class LColomns {
                 "NOT_NULL   VARCHAR2(1),\n" +
                 "TYPE_COLOMN   NUMBER /*not null*/,\n" +
                 "TYPE_VALUE NUMBER\n" +
-                ") tablespace \n" + pluginTunes.getTableSpaseSysTable() + "\n " +
+                ") tablespace \n" + pluginTunes.getTableSpaceSysTable() + "\n " +
                 pluginTunes.getStorageTable();
         queryTable.add(s);
 

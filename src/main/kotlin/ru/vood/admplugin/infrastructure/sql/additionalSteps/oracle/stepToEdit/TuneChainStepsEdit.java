@@ -11,9 +11,14 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToEdit.ab
 @Component
 public class TuneChainStepsEdit extends TuneChainStepsEditService {
 
-    @Autowired
-    @Qualifier("editTableImpl")
+    //    @Autowired
+//    @Qualifier("editTableImpl")
     private StepsEditServise table;
+
+    @Autowired
+    public TuneChainStepsEdit(@Qualifier("editTableImpl") StepsEditServise table) {
+        this.table = table;
+    }
 
     public void runChain(VBdObjectEntity bdobjOld, VBdObjectEntity bdobjNew) {
         // Вызов первого, остальное пойдет по цепочке

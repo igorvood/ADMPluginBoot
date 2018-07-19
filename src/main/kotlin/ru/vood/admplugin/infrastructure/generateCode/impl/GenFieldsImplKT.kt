@@ -13,23 +13,20 @@ import java.math.BigDecimal
 import java.util.*
 
 @Component
-class GenFieldsImplKT : GenFieldsServiceKT {
+class GenFieldsImplKT(@Autowired
+                      val genCodeCommonFunction: GenCodeCommonFunctionKT,
 
-    @Autowired
-    private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
+                      @Autowired
+                      val genAnnotationFieldsService: GenAnnitationFieldsServiceKT,
 
-    @Autowired
-    private lateinit var genAnnitationFieldsService: GenAnnitationFieldsServiceKT
-
-    @Autowired
-    private lateinit var addJavaClass: AddJavaClass
-
+                      @Autowired
+                      val addJavaClass: AddJavaClass) : GenFieldsServiceKT {
 
     override fun genCode(entity: VBdColumnsEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
         val code = StringBuilder()
         if (typeOfGenClass == TypeOfGenClass.ENTITY_CLASS) {
             code.append("/*Наименование поля - ${entity.name}*/\n")
-            code.append(genAnnitationFieldsService.genCode(entity, typeOfGenClass))
+            code.append(genAnnotationFieldsService.genCode(entity, typeOfGenClass))
             code.append("lateinit var ")
             code.append(genCodeCommonFunction.genFieldName(entity).toString()).append(" : ")
             code.append(genColumnClass(entity)).append("\n\n")

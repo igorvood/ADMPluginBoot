@@ -11,7 +11,7 @@ import ru.vood.admplugin.infrastructure.spring.except.CoreExeption;
 import ru.vood.admplugin.infrastructure.spring.intf.CommonFunctionService;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexEntityService;
 import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexEntityRepository;
-import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexedColomnsEntityRepository;
+import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexedColumnsEntityRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -27,7 +27,7 @@ public class VBdIndexEntityImp implements VBdIndexEntityService {
     @Autowired
     protected VBdIndexEntityRepository entityTestRepository;
     @Autowired
-    protected VBdIndexedColomnsEntityRepository indexedColomnsEntityRepository;
+    protected VBdIndexedColumnsEntityRepository indexedColomnsEntityRepository;
     @Autowired
     protected EntityManager em;
     @Autowired

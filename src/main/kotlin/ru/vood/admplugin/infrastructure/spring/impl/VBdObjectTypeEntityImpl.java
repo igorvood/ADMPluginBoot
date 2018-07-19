@@ -8,13 +8,17 @@ import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectTypeEntity;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdObjectTypeEntityService;
 import ru.vood.admplugin.infrastructure.spring.repository.VBdObjectTypeEntityRepository;
 
-@Service//("jpaVBdObjectTypeEntityService")
+@Service
 @Repository
 @Transactional
 public class VBdObjectTypeEntityImpl /*extends ParentForAllImpl*/ implements VBdObjectTypeEntityService {
 
-    @Autowired
     private VBdObjectTypeEntityRepository bdObjectTypeEntityRepository;
+
+    @Autowired
+    public VBdObjectTypeEntityImpl(VBdObjectTypeEntityRepository bdObjectTypeEntityRepository) {
+        this.bdObjectTypeEntityRepository = bdObjectTypeEntityRepository;
+    }
 
     @Override
     public VBdObjectTypeEntity save(VBdObjectTypeEntity bdObjectTypeEntity) {

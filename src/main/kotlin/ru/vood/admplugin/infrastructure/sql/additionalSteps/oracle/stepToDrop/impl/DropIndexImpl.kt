@@ -9,9 +9,9 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToCreate.
 import ru.vood.admplugin.infrastructure.tune.PluginTunes
 
 @Component
-class DropIndexImpl : StepsCreateAndDropServise {
-    @Autowired
-    private lateinit var tunes: PluginTunes
+class DropIndexImpl(@Autowired
+                    val tunes: PluginTunes
+) : StepsCreateAndDropServise {
 
     override fun createDDL(bdObject: VBdObjectEntity): QueryTableNew {
         val index = bdObject as? VBdIndexEntity ?: return QueryTableNew()

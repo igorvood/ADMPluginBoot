@@ -15,17 +15,24 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Component
 public class AddForeignKeyForParentImpl implements StepsCreateAndDropServise {
 
-    @Autowired
-    @Qualifier("addArrayImpl")
+    //    @Autowired
+//    @Qualifier("addArrayImpl")
     private StepsCreateAndDropServise nextStep;
 
-
-    @Autowired
+    //    @Autowired
     private PluginTunes pluginTunes;
 
-    @Autowired
+    //    @Autowired
     private AddConstraintSql constraintSql;
 
+    @Autowired
+    public AddForeignKeyForParentImpl(@Qualifier("addArrayImpl") StepsCreateAndDropServise nextStep
+            , PluginTunes pluginTunes
+            , AddConstraintSql constraintSql) {
+        this.nextStep = nextStep;
+        this.pluginTunes = pluginTunes;
+        this.constraintSql = constraintSql;
+    }
 
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {
 

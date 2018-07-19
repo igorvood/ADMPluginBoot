@@ -77,7 +77,7 @@ public class NewOrEditTable extends JAddDialog {
             newBDTable.setName(this.nameField.getText().trim());
             newBDTable.setJavaClass(newBDTable.getClass().toString());
 
-            newBDTable.setTableSpace(pluginTunes.getTableSpaseUserTable());
+            newBDTable.setTableSpace(pluginTunes.getTableSpaceUserTable());
             newBDTable.setStorage(pluginTunes.getStorageTable());
             VBdTableEntityService tableEntityService = LoadedCTX.getService(VBdTableEntityService.class);
             tableEntityService.save(newBDTable);

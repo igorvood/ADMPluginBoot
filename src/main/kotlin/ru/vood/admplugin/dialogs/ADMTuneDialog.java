@@ -184,11 +184,11 @@ public class ADMTuneDialog extends JAddDialog {
         pluginTunes.setHost(this.hostField.getText());
         pluginTunes.setPort(this.portField.getText());
         pluginTunes.setSid(this.sidField.getText());
-        pluginTunes.setTableSpaseSysTable(this.tableSpaceSysTableField.getText());
-        pluginTunes.setTableSpaseSysIndex(this.tableSpaceSysIndexField.getText());
-        pluginTunes.setTableSpaseUserTable(this.tableSpaceUserTableField.getText());
-        pluginTunes.setTableSpaseUserIndex(this.tableSpaceUserIndexField.getText());
-        pluginTunes.setEncodding(this.codingField.getText());
+        pluginTunes.setTableSpaceSysTable(this.tableSpaceSysTableField.getText());
+        pluginTunes.setTableSpaceSysIndex(this.tableSpaceSysIndexField.getText());
+        pluginTunes.setTableSpaceUserTable(this.tableSpaceUserTableField.getText());
+        pluginTunes.setTableSpaceUserIndex(this.tableSpaceUserIndexField.getText());
+        pluginTunes.setEncoding(this.codingField.getText());
         pluginTunes.setPrefixTable(this.prefixSysTableField.getText());
         pluginTunes.setOwner(this.ownerField.getText());
         pluginTunes.setDbmsType(this.dataBaseBox.getSelectedItem().toString());
@@ -231,11 +231,11 @@ public class ADMTuneDialog extends JAddDialog {
         this.hostField.setText(tunes.getHost());
         this.portField.setText(tunes.getPort());
         this.sidField.setText(tunes.getSid());
-        this.tableSpaceSysTableField.setText(tunes.getTableSpaseSysTable());
-        this.tableSpaceSysIndexField.setText(tunes.getTableSpaseSysIndex());
-        this.tableSpaceUserTableField.setText(tunes.getTableSpaseUserTable());
-        this.tableSpaceUserIndexField.setText(tunes.getTableSpaseUserIndex());
-        this.codingField.setText(tunes.getEncodding());
+        this.tableSpaceSysTableField.setText(tunes.getTableSpaceSysTable());
+        this.tableSpaceSysIndexField.setText(tunes.getTableSpaceSysIndex());
+        this.tableSpaceUserTableField.setText(tunes.getTableSpaceUserTable());
+        this.tableSpaceUserIndexField.setText(tunes.getTableSpaceUserIndex());
+        this.codingField.setText(tunes.getEncoding());
         this.prefixSysTableField.setText(tunes.getPrefixTable());
 
         boolean isExists = false;

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
 import ru.vood.admplugin.infrastructure.spring.intf.VBdIndexedColumnsEntityService;
-import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexedColomnsEntityRepository;
+import ru.vood.admplugin.infrastructure.spring.repository.VBdIndexedColumnsEntityRepository;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
@@ -17,24 +17,30 @@ import java.util.List;
 @Transactional
 public class VBdIndexedColumnsImpl implements VBdIndexedColumnsEntityService {
 
-    @Autowired
+
     protected EntityManager em;
+
+    private VBdIndexedColumnsEntityRepository bdColumnsEntityRepository;
+
     @Autowired
-    private VBdIndexedColomnsEntityRepository bdColomnsEntityRepository;
+    public VBdIndexedColumnsImpl(EntityManager em, VBdIndexedColumnsEntityRepository bdColumnsEntityRepository) {
+        this.em = em;
+        this.bdColumnsEntityRepository = bdColumnsEntityRepository;
+    }
 
     @Override
     public VBdIndexedColumnsEntity save(VBdIndexedColumnsEntity entity) {
-        return bdColomnsEntityRepository.save(entity);
+        return bdColumnsEntityRepository.save(entity);
     }
 
     @Override
     public void delete(VBdIndexedColumnsEntity entity) {
-        bdColomnsEntityRepository.delete(entity);
+        bdColumnsEntityRepository.delete(entity);
     }
 
     @Override
     public List<VBdIndexedColumnsEntity> findByCollectionId(BigDecimal collectionId) {
-        return bdColomnsEntityRepository.findByCollectionId(collectionId);
+        return bdColumnsEntityRepository.findByCollectionId(collectionId);
     }
 
     @Override
@@ -46,7 +52,7 @@ public class VBdIndexedColumnsImpl implements VBdIndexedColumnsEntityService {
                 "")
                 .setParameter("collectionId", collectionId);
         List list = query.getResultList();*/
-        List list = bdColomnsEntityRepository.findByCollectionIdIn(collectionId);
+        List list = bdColumnsEntityRepository.findByCollectionIdIn(collectionId);
         return list;
     }
 }

@@ -32,7 +32,7 @@ public class LTable {
                 "  to_type     NUMBER,\n" + //VARCHAR2(500)
                 "  length      NUMBER,\n" +
                 "  precision   NUMBER\n" +
-                ") tablespace \n" + pluginTunes.getTableSpaseSysTable() + "\n " +
+                ") tablespace \n" + pluginTunes.getTableSpaceSysTable() + "\n " +
                 pluginTunes.getStorageTable();
         queryTable.add(s);
 

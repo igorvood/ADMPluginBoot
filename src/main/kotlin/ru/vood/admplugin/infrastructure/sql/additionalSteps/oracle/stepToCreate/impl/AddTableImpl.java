@@ -14,18 +14,29 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Component
 public class AddTableImpl implements StepsCreateAndDropServise {
 
-    @Autowired
-    AddPrimaryKeyImpl primaryKey;
+    //    @Autowired
+    private AddPrimaryKeyImpl primaryKey;
 
-    @Autowired
-    AddForeignKeyForParentImpl foreignKeyForParent;
+    //    @Autowired
+    private AddForeignKeyForParentImpl foreignKeyForParent;
 
-    @Autowired
-    @Qualifier("addColomnImpl")
+    //    @Autowired
+//    @Qualifier("addColumnImpl")
     private StepsCreateAndDropServise nextStep;
 
-    @Autowired
+    //    @Autowired
     private PluginTunes tunes;
+
+    @Autowired
+    public AddTableImpl(AddPrimaryKeyImpl primaryKey
+            , AddForeignKeyForParentImpl foreignKeyForParent
+            , @Qualifier("addColumnImpl") StepsCreateAndDropServise nextStep
+            , PluginTunes tunes) {
+        this.primaryKey = primaryKey;
+        this.foreignKeyForParent = foreignKeyForParent;
+        this.nextStep = nextStep;
+        this.tunes = tunes;
+    }
 
     @Override
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {
@@ -42,7 +53,7 @@ public class AddTableImpl implements StepsCreateAndDropServise {
             stringBuffer.append("-- Create table\n");
             stringBuffer.append("create table " + tunes.getOwner() + "." + tunes.getPrefixTable() + bdTable.getCode() + "\n");
             stringBuffer.append("(id NUMBER not null) ");
-            stringBuffer.append(" tablespace " + tunes.getTableSpaseUserTable() + "\n ");
+            stringBuffer.append(" tablespace " + tunes.getTableSpaceUserTable() + "\n ");
             stringBuffer.append(tunes.getStorageTable() + "\n");
             queryTable.add(stringBuffer.toString());
 
@@ -57,7 +68,7 @@ public class AddTableImpl implements StepsCreateAndDropServise {
 //            colomnsEntity.setNotNull("1");
 //            colomnsEntity.setTypeColomn(ObjectTypes.getNUMBER());
 //            colomnsEntity.setTypeValue(Tables.getAny("NUM"));
-//            colomnsEntity = colomnsEntityService.save(colomnsEntity);
+//            colomnsEntity = columnsEntityService.save(colomnsEntity);
 
 
             //если добавляем таблицу с настоящим родителем, то надо их связать внешним ключем

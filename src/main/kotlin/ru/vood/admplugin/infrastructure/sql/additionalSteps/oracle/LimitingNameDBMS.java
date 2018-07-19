@@ -9,8 +9,12 @@ import ru.vood.admplugin.infrastructure.spring.intf.CommonFunctionService;
 public class LimitingNameDBMS {
 
     private static int maxLengthNameObject = 30;
-    @Autowired
     private CommonFunctionService commonFunction;
+
+    @Autowired
+    public LimitingNameDBMS(CommonFunctionService commonFunction) {
+        this.commonFunction = commonFunction;
+    }
 
     public String getNameObj(String name) {
         if (name.length() <= maxLengthNameObject) {

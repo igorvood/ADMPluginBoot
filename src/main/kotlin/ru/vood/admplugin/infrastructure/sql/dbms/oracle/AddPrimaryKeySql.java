@@ -8,18 +8,22 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Service
 public class AddPrimaryKeySql {
 
-    @Autowired
     private PluginTunes tunes;
 
-    @Autowired
     private LimitingNameDBMS nameDBMS;
 
+    @Autowired
+    public AddPrimaryKeySql(PluginTunes tunes, LimitingNameDBMS nameDBMS) {
+        this.tunes = tunes;
+        this.nameDBMS = nameDBMS;
+    }
+
     public String generateUserPK(String tableName) {
-        return generate(tableName, tunes.getTableSpaseUserIndex());
+        return generate(tableName, tunes.getTableSpaceUserIndex());
     }
 
     public String generateSys(String tableName) {
-        return generate(tableName, tunes.getTableSpaseSysIndex());
+        return generate(tableName, tunes.getTableSpaceSysIndex());
     }
 
     private String generate(String tableName, String tableSpace) {

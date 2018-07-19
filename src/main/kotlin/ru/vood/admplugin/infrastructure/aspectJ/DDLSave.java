@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.vood.admplugin.infrastructure.spring.entity.VBdObjectEntity;
 import ru.vood.admplugin.infrastructure.spring.except.ApplicationException;
-import ru.vood.admplugin.infrastructure.sql.ExeptObjectName;
+import ru.vood.admplugin.infrastructure.sql.ExceptObjectName;
 import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.LimitingNameDBMS;
 import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToCreate.abstr.TuneChainStepsCreateServise;
 import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToDrop.TuneChainStepsDrop;
@@ -13,20 +13,24 @@ import ru.vood.admplugin.infrastructure.sql.additionalSteps.oracle.stepToEdit.Tu
 @Service
 public class DDLSave {
 
-    @Autowired
     private TuneChainStepsCreateServise tuneChainStepsCreateServise;
 
-    @Autowired
     private TuneChainStepsDrop tuneChainStepsDrop;
 
-    @Autowired
     private TuneChainStepsEdit tuneChainStepsEdit;
 
-    @Autowired
-    private ExeptObjectName exeptObjectName;
+    private ExceptObjectName exeptObjectName;
+
+    private LimitingNameDBMS limitingNameDBMS;
 
     @Autowired
-    private LimitingNameDBMS limitingNameDBMS;
+    public DDLSave(TuneChainStepsCreateServise tuneChainStepsCreateServise, TuneChainStepsDrop tuneChainStepsDrop, TuneChainStepsEdit tuneChainStepsEdit, ExceptObjectName exeptObjectName, LimitingNameDBMS limitingNameDBMS) {
+        this.tuneChainStepsCreateServise = tuneChainStepsCreateServise;
+        this.tuneChainStepsDrop = tuneChainStepsDrop;
+        this.tuneChainStepsEdit = tuneChainStepsEdit;
+        this.exeptObjectName = exeptObjectName;
+        this.limitingNameDBMS = limitingNameDBMS;
+    }
 
     public void checkRun(Object joinPoint, Object o) {
         if (o instanceof VBdObjectEntity) {

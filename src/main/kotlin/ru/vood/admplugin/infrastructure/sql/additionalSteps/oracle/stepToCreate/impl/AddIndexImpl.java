@@ -17,18 +17,24 @@ import java.util.stream.Collectors;
 @Component
 public class AddIndexImpl implements StepsCreateAndDropServise {
 
-    @Autowired
-    @Qualifier("addArrayImpl")
+    //    @Autowired
+//    @Qualifier("addArrayImpl")
     private StepsCreateAndDropServise nextStep;
 
-    @Autowired
+    //    @Autowired
     private LimitingNameDBMS limitingNameDBMS;
 
-//    @Autowired
-//    private AddIndexSql indexSql;
+    //    @Autowired
+    private PluginTunes pluginTunes;
 
     @Autowired
-    private PluginTunes pluginTunes;
+    public AddIndexImpl(@Qualifier("addArrayImpl") StepsCreateAndDropServise nextStep
+            , LimitingNameDBMS limitingNameDBMS
+            , PluginTunes pluginTunes) {
+        this.nextStep = nextStep;
+        this.limitingNameDBMS = limitingNameDBMS;
+        this.pluginTunes = pluginTunes;
+    }
 
     @Override
     public StepsCreateAndDropServise getNextStep() {
@@ -48,7 +54,7 @@ public class AddIndexImpl implements StepsCreateAndDropServise {
                     .map((c) -> c.getColomnRef().getCode())
                     .collect(Collectors.toList());
             //String sql = indexSql.generateUser(bdIndex.getParent().getCode(), bdIndex.getUniqueI(), s, null);
-            String sql = generateAll(pluginTunes.getPrefixTable() + bdIndex.getParent().getCode(), bdIndex.getUniqueI(), false, pluginTunes.getTableSpaseUserIndex(), s, bdIndex.getCode());
+            String sql = generateAll(pluginTunes.getPrefixTable() + bdIndex.getParent().getCode(), bdIndex.getUniqueI(), false, pluginTunes.getTableSpaceUserIndex(), s, bdIndex.getCode());
             queryTable.add(sql);
         }
 
@@ -93,7 +99,7 @@ public class AddIndexImpl implements StepsCreateAndDropServise {
         String nameSysIndex = colomns.stream().reduce((s1, s2) -> s1 + "_" + s2).orElse(" ");
         nameSysIndex = "SYS_IDX_" + tableName + "_" + nameSysIndex;
         nameSysIndex = limitingNameDBMS.getNameObj(nameSysIndex);
-        return generateAll(tableName, isUnique, false, pluginTunes.getTableSpaseSysIndex(), colomns, nameSysIndex);
+        return generateAll(tableName, isUnique, false, pluginTunes.getTableSpaceSysIndex(), colomns, nameSysIndex);
     }
 
 }

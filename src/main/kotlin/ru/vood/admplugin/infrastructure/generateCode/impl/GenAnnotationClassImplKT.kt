@@ -13,16 +13,12 @@ import javax.persistence.InheritanceType
 import javax.persistence.Table
 
 @Component
-class GenAnnotationClassImplKT : GenAnnotationClassServiceKT {
-
-    @Autowired
-    private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
-
-    @Autowired
-    private lateinit var addAnnotationClass: AddAnnotationClass
-
-    @Autowired
-    private lateinit var pluginTunes: PluginTunes
+class GenAnnotationClassImplKT(@Autowired
+                               val genCodeCommonFunction: GenCodeCommonFunctionKT,
+                               @Autowired
+                               val addAnnotationClass: AddAnnotationClass,
+                               @Autowired
+                               val pluginTunes: PluginTunes) : GenAnnotationClassServiceKT {
 
     override fun genCode(entity: VBdTableEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
         val code = StringBuilder("")

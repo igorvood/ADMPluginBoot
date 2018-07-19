@@ -6,7 +6,7 @@ import ru.vood.admplugin.infrastructure.spring.entity.VBdIndexedColumnsEntity;
 import java.math.BigDecimal;
 import java.util.List;
 
-public interface VBdIndexedColomnsEntityRepository extends CrudRepository<VBdIndexedColumnsEntity, BigDecimal> {
+public interface VBdIndexedColumnsEntityRepository extends CrudRepository<VBdIndexedColumnsEntity, BigDecimal> {
 
     List<VBdIndexedColumnsEntity> findByCollectionId(BigDecimal collectionId);
 
