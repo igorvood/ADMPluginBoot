@@ -28,14 +28,14 @@ class GenCodeCommonFunctionKT {
         return StringBuilder(parameterName.get(0).toLowerCase() + parameterName.substring(1) + "Val")
     }
 
-    fun getPackegeName(typeOfGenClassKT: TypeOfGenClass): StringBuilder {
+    fun getPackageName(typeOfGenClassKT: TypeOfGenClass): StringBuilder {
         return StringBuilder(pluginTunes.packageIn + "." + typeOfGenClassKT.toString().toLowerCase())
     }
 
     @JvmOverloads
     fun getFullClassName(entity: VBdObjectEntity
                          , typeOfGenClassKT: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): StringBuilder {
-        val code = StringBuilder(getPackegeName(typeOfGenClassKT)).append(".")
+        val code = StringBuilder(getPackageName(typeOfGenClassKT)).append(".")
         return code.append(getClassName(entity, typeOfGenClassKT))
     }
 

@@ -12,6 +12,6 @@ class GenPackageImplKT : GenAnyPartKT<VBdObjectEntity> {
     private lateinit var genCodeCommonFunction: GenCodeCommonFunctionKT
 
     override fun genCode(entity: VBdObjectEntity, typeOfGenClass: TypeOfGenClass): StringBuilder {
-        return StringBuilder("package " + genCodeCommonFunction.getPackegeName(typeOfGenClass) + ";\n\n")
+        return StringBuilder("package " + genCodeCommonFunction.getPackageName(typeOfGenClass) + ";\n\n")
     }
 }

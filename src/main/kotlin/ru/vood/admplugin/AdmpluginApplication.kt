@@ -1,7 +1,6 @@
 package ru.vood.admplugin
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.getBean
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.cache.annotation.EnableCaching
@@ -9,6 +8,7 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.PropertySource
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
+import ru.vood.admplugin.infrastructure.generateCode.impl.createFiles.GeterateFile
 
 @SpringBootApplication
 @EnableCaching
@@ -35,5 +35,6 @@ open class AdmpluginApplication{
 
 fun main(args: Array<String>) {
     val context = runApplication<AdmpluginApplication>(*args)
-    println(context)
+    val bean = context.getBean(GeterateFile::class.java)
+    println(bean)
 }
