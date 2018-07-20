@@ -7,10 +7,15 @@ import ru.vood.admplugin.infrastructure.generateCode.impl.GenCodeCommonFunctionK
 import ru.vood.admplugin.infrastructure.generateCode.impl.TypeOfGenClass
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenAnyPartKT
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
-import java.io.File
+import java.nio.charset.Charset
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
+
 
 @Component
-class GeterateFile {
+class GenerateFile {
 
     val genAnyPartKT: GenAnyPartKT<VBdTableEntity>
 
@@ -23,25 +28,20 @@ class GeterateFile {
         this.genCodeCommonFunctionKT = genCodeCommonFunctionKT
     }
 
-
     @JvmOverloads
-    fun getFile(tableEntity: VBdTableEntity, typeOfGenClass: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): File {
+    fun getFile(tableEntity: VBdTableEntity, typeOfGenClass: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): Path? {
         val packageName = genCodeCommonFunctionKT.getPackageName(typeOfGenClass)
-
-
         val generatedClass = genAnyPartKT.genCode(tableEntity, typeOfGenClass)
-
-        return File("")
+        val path = Paths.get(createDirs(packageName.toString()).toString() + "\\" + genCodeCommonFunctionKT.getClassName(tableEntity, typeOfGenClass))
+        val retPath = Files.write(path, generatedClass.lines(), Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW)
+        return retPath
     }
 
-    /*private*/ fun createDirs(packageName: String): File {
-        val beginDir = File("C:\\temp\\1")
-        //Files.createDirectories()
-
-        val dirs = packageName.replace(".", "\\")// .split(".")
-        println(dirs)
-        //   dirs.asSequence().reduce { s1, s2-> {} }
-        return File("")
+    private fun createDirs(packageName: String): Path {
+        val beginDir = "C:\\temp\\1"
+        val dirs = beginDir + "\\" + packageName.replace(".", "\\")// .split(".")
+        val dir = Files.createDirectories(Paths.get(dirs))
+        return dir
     }
 
 }

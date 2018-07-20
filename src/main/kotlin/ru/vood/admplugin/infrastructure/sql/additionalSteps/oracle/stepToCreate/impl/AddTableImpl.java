@@ -14,19 +14,20 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Component
 public class AddTableImpl implements StepsCreateAndDropServise {
 
-    //    @Autowired
+    @Autowired
     private AddPrimaryKeyImpl primaryKey;
 
-    //    @Autowired
+    @Autowired
     private AddForeignKeyForParentImpl foreignKeyForParent;
 
-    //    @Autowired
-//    @Qualifier("addColumnImpl")
+    @Autowired
+    @Qualifier("addColumnImpl")
     private StepsCreateAndDropServise nextStep;
 
-    //    @Autowired
+    @Autowired
     private PluginTunes tunes;
 
+/*
     @Autowired
     public AddTableImpl(AddPrimaryKeyImpl primaryKey
             , AddForeignKeyForParentImpl foreignKeyForParent
@@ -37,6 +38,7 @@ public class AddTableImpl implements StepsCreateAndDropServise {
         this.nextStep = nextStep;
         this.tunes = tunes;
     }
+*/
 
     @Override
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {

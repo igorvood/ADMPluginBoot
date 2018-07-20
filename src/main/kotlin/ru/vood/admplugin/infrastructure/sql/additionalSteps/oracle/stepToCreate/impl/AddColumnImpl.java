@@ -16,14 +16,20 @@ import ru.vood.admplugin.infrastructure.tune.PluginTunes;
 @Component
 public class AddColumnImpl implements StepsCreateAndDropServise {
 
+    @Autowired
+    @Qualifier("addIndexImpl")
     private StepsCreateAndDropServise nextStep;
+
+    @Autowired
     private PluginTunes tunes;
+
+    @Autowired
     private AddConstraintSql constraintSql;
 
-    //    @Autowired
-//    @Qualifier("tuneChainStepsCreate")
+    @Autowired
     private TuneChainStepsCreateServise stepsCreate;
 
+/*
     @Autowired
     public AddColumnImpl(@Qualifier("addIndexImpl") StepsCreateAndDropServise nextStep
             , PluginTunes tunes
@@ -34,6 +40,7 @@ public class AddColumnImpl implements StepsCreateAndDropServise {
         this.constraintSql = constraintSql;
         this.stepsCreate = stepsCreate;
     }
+*/
 
     @Override
     public QueryTableNew createDDL(VBdObjectEntity bdObject) {

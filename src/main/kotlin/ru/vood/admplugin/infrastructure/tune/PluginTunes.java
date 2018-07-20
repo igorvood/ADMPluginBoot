@@ -28,25 +28,25 @@ public class PluginTunes {
     @Value("${sid}")
     private String sid;
 
-    @Value("${tableSpaseSysTable}")
+    @Value("${tableSpaceSysTable}")
     private String tableSpaceSysTable;
 
-    @Value("${tableSpaseSysIndex}")
+    @Value("${tableSpaceSysIndex}")
     private String tableSpaceSysIndex;
 
-    @Value("${tableSpaseUserTable}")
+    @Value("${tableSpaceUserTable}")
     private String tableSpaceUserTable;
 
-    @Value("${tableSpaseUserIndex}")
+    @Value("${tableSpaceUserIndex}")
     private String tableSpaceUserIndex;
 
-    @Value("${encodding}")
+    @Value("${encoding}")
     private String encoding;
 
     @Value("${prefixTable}")
     private String prefixTable;
 
-    @Value("${prefixColomn}")
+    @Value("${prefixColumn}")
     private String prefixColumn;
 
     @Value("${dbmsType}")

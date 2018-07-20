@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.PropertySource
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
-import ru.vood.admplugin.infrastructure.generateCode.impl.createFiles.GeterateFile
+import ru.vood.admplugin.infrastructure.generateCode.impl.createFiles.GenerateFile
 
 @SpringBootApplication
 @EnableCaching
@@ -35,6 +35,6 @@ open class AdmpluginApplication{
 
 fun main(args: Array<String>) {
     val context = runApplication<AdmpluginApplication>(*args)
-    val bean = context.getBean(GeterateFile::class.java)
+    val bean = context.getBean(GenerateFile::class.java)
     println(bean)
 }
