@@ -15,7 +15,7 @@ import java.nio.file.StandardOpenOption
 
 
 @Component
-class GenerateFile {
+class GenerateOneFile {
 
     val genAnyPartKT: GenAnyPartKT<VBdTableEntity>
 
@@ -29,16 +29,17 @@ class GenerateFile {
     }
 
     @JvmOverloads
-    fun getFile(tableEntity: VBdTableEntity, typeOfGenClass: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): Path? {
+    fun getFile(startPath: Path, tableEntity: VBdTableEntity, typeOfGenClass: TypeOfGenClass = TypeOfGenClass.ENTITY_CLASS): Path? {
         val packageName = genCodeCommonFunctionKT.getPackageName(typeOfGenClass)
         val generatedClass = genAnyPartKT.genCode(tableEntity, typeOfGenClass)
-        val path = Paths.get(createDirs(packageName.toString()).toString() + "\\" + genCodeCommonFunctionKT.getClassName(tableEntity, typeOfGenClass))
+        val path = Paths.get(createDirs(startPath, packageName.toString()).toString() + "\\" + genCodeCommonFunctionKT.getClassName(tableEntity, typeOfGenClass))
         val retPath = Files.write(path, generatedClass.lines(), Charset.forName("UTF-8"), StandardOpenOption.CREATE_NEW)
         return retPath
     }
 
-    private fun createDirs(packageName: String): Path {
-        val beginDir = "C:\\temp\\1"
+    private fun createDirs(startPath: Path, packageName: String): Path {
+        //val beginDir = "C:\\temp\\1" //todo убрать это позже,
+        val beginDir = startPath.toString() //todo убрать это позже,
         val dirs = beginDir + "\\" + packageName.replace(".", "\\")// .split(".")
         val dir = Files.createDirectories(Paths.get(dirs))
         return dir

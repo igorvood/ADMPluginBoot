@@ -9,11 +9,10 @@ import ru.vood.admplugin.infrastructure.generateCode.impl.GenCodeCommonFunctionK
 import ru.vood.admplugin.infrastructure.generateCode.impl.TypeOfGenClass
 import ru.vood.admplugin.infrastructure.generateCode.impl.intf.GenAnyPartKT
 import ru.vood.admplugin.infrastructure.spring.entity.VBdTableEntity
+import java.nio.file.Paths
 
 @RunWith(SpringRunner::class)
-
-class GenerateFileTest {
-
+class GenerateOneFileTest {
 
     @MockBean
     lateinit var genCodeCommonFunctionKT: GenCodeCommonFunctionKT
@@ -21,9 +20,8 @@ class GenerateFileTest {
     @MockBean
     lateinit var genAnyPartKT: GenAnyPartKT<VBdTableEntity>
 
-
     @Test
-    fun createDirs() {
+    fun getFile() {
         val vBdTableEntity = VBdTableEntity()
         vBdTableEntity.code = "TTT_QQQ"
 
@@ -31,8 +29,8 @@ class GenerateFileTest {
         Mockito.`when`(genCodeCommonFunctionKT.getPackageName(TypeOfGenClass.ENTITY_CLASS)).thenReturn(StringBuilder("ru.vood." + TypeOfGenClass.ENTITY_CLASS))
         Mockito.`when`(genCodeCommonFunctionKT.getClassName(vBdTableEntity, TypeOfGenClass.ENTITY_CLASS)).thenReturn(StringBuilder("TTT_QQQ.kt"))
 
-        val generateFile = GenerateFile(genAnyPartKT, genCodeCommonFunctionKT)
-        generateFile.getFile(vBdTableEntity)
+        val generateFile = GenerateOneFile(genAnyPartKT, genCodeCommonFunctionKT)
+        val path = Paths.get("C:\\temp\\1")
+        generateFile.getFile(path, vBdTableEntity)
     }
 }
-

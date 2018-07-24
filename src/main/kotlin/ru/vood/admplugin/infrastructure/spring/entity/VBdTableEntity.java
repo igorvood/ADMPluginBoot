@@ -67,4 +67,6 @@ public class VBdTableEntity extends VBdObjectEntity {
     public void setToType(VBdTableEntity toType) {
         this.toType = toType;
     }
+
+
 }
